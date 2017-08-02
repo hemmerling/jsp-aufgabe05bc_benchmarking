@@ -30,9 +30,9 @@ public class Benchmarker implements ServletRequestListener {
     }
 
     // @Override
-    public void init() throws ServletException {
-        System.out.println("init()");
-    }
+//    public void init() throws ServletException {
+//        System.out.println("init()");
+//    }
 
     @Override
     public void requestInitialized(ServletRequestEvent event) {
@@ -52,11 +52,12 @@ public class Benchmarker implements ServletRequestListener {
         ServletRequest request = event.getServletRequest();
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         long startTime = Long.parseLong(request.getAttribute("START_TIME").toString());
+        long duration = endTime - startTime;
+        String requestURI = httpRequest.getRequestURI();
         System.out.format("Execution time for the URL: '%s' ist: %d ms%n",
-                httpRequest.getRequestURI(), endTime - startTime);
+                          requestURI, duration);
         System.out.println(request + ": destroyed");
-
-    }
+        }
 }
   
    

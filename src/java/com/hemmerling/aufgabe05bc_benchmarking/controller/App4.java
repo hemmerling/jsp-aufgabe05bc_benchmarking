@@ -7,8 +7,6 @@ package com.hemmerling.aufgabe05bc_benchmarking.controller;
 
 import java.io.IOException;
 import static java.lang.Thread.sleep;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
