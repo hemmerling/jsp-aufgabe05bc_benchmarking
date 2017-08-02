@@ -17,17 +17,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.hemmerling.aufgabe05bc_benchmarking.model.BenchmarkManager;
+
 /**
  *
  * @author rhemmerling
  */
-@WebListener
+@WebListener("Benchmarker")
 public class Benchmarker implements ServletRequestListener {
 
     static {
         // statischer Initalisierungsblock
         System.out.println("Static initalisation block");
     }
+
+    public Benchmarker(){}
 
     // @Override
 //    public void init() throws ServletException {
@@ -57,6 +61,10 @@ public class Benchmarker implements ServletRequestListener {
         System.out.format("Execution time for the URL: '%s' ist: %d ms%n",
                           requestURI, duration);
         System.out.println(request + ": destroyed");
+
+        BenchmarkManager benchmarkResult = BenchmarkManager.getInstance(); // Singleton 
+        benchmarkResult.addBenchmarkingResults(requestURI, duration);
+
         }
 }
   

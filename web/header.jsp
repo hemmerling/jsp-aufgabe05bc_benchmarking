@@ -9,7 +9,9 @@
 <a href="app3.jsp">App3 (jsp)</a> !
 <a href="App4">App4</a> !
 <a href="App5">App5</a> !
-<a href="statistics.jsp">Statistics</a>!
+<a href="BenchmarkResult">BenchmarkResult</a> !
+<s><a href="benchmark.jsp">BenchmarkResult (jsp)</a></s> !
+<a href="context_attributes.jsp">Context Attributes</a>
 
 
 
