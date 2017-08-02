@@ -77,7 +77,8 @@ public class Benchmarker implements ServletRequestListener, ServletContextListen
                           requestURI, duration);
         System.out.println(request + ": destroyed");
 
-        BenchmarkManager benchmarkResult = BenchmarkManager.getInstance(); // Singleton 
+        ServletContext context2 = request.getServletContext();      
+        BenchmarkManager benchmarkResult = ( BenchmarkManager ) context2.getAttribute("BENCHMARK");
         benchmarkResult.addBenchmarkingResults(requestURI, duration);
 
         }

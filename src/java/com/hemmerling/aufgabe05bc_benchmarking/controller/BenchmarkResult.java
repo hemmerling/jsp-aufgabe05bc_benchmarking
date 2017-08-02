@@ -39,9 +39,8 @@ public class BenchmarkResult extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        BenchmarkManager benchmarkResult = BenchmarkManager.getInstance(); // Singleton 
         ServletContext context2 = request.getServletContext();      
-        context2.setAttribute("BENCHMARK", benchmarkResult);
+        BenchmarkManager benchmarkResult = ( BenchmarkManager ) context2.getAttribute("BENCHMARK");
         
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("benchmark.jsp");
         requestDispatcher.forward(request, response); 
